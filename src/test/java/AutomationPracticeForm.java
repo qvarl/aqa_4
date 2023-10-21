@@ -39,7 +39,6 @@ public class AutomationPracticeForm {
         executeJavaScript("$('footer').remove()");
         executeJavaScript("$('#close-fixedban').remove()");
 
-
         $("#firstName").setValue(userFirstName);
         $("#lastName").setValue(userLastName);
         $("#userEmail").setValue(userEmail);
@@ -52,7 +51,7 @@ public class AutomationPracticeForm {
         $("#subjectsContainer input").setValue(userSubjects);
         $(".subjects-auto-complete__menu-list").$(byText(userSubjects)).click();
         $("#hobbiesWrapper").$(byText(userHobbies)).click();
-$("#uploadPicture").uploadFromClasspath(userFile);
+        $("#uploadPicture").uploadFromClasspath(userFile);
         $("#currentAddress").setValue(userAddress);
         $("#state").click();
         $("#state").$(byText(userState)).click();
@@ -71,6 +70,5 @@ $("#uploadPicture").uploadFromClasspath(userFile);
         $$(".table tr").findBy(exactTextCaseSensitive("Picture " + userFile)).shouldBe(visible);
         $$(".table tr").findBy(exactTextCaseSensitive("Address " + userAddress)).shouldBe(visible);
         $$(".table tr").findBy(exactTextCaseSensitive("State and City " + userState + " " + userCity)).shouldBe(visible);
-
     }
 }
